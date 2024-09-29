@@ -1,22 +1,22 @@
 import Link from 'next/link';
 import React from 'react';
 
-/* 9:57  76-6 */
 const BlogPage = () => {
     return (
         <div className='p-8'>
-            {
-                blogs.map((blog => (
-                    <div key={blog.slug} className='border-2 p-12'>
-                        <h2>{blog.title}</h2>
-                        <h2>{blog.description}</h2>
+            {blogs.map((blog) => (
+                <div key={blog.slug} className='border-2 p-12'>
+                    <h2>{blog.title}</h2>
+                    <h2>{blog.description}</h2>
+
+                    {/* Use slug in the URL */}
+                    <Link href={`/blog/${blog.slug}`}>
                         <button className='bg-blue-800 p-2 text-black'>
-                            <Link href={`/blog/${blog.title}`}></Link>
-                            view details
+                            View Details
                         </button>
-                    </div>
-                )))
-            }
+                    </Link>
+                </div>
+            ))}
         </div>
     );
 };
@@ -48,6 +48,5 @@ const blogs = [
         description: "Everything you need to know to boost your website's ranking and visibility with SEO."
     }
 ];
-
 
 export default BlogPage;
