@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CategoriesPage = ({params}) => {
-    console.log(params)
+    console.log(paramshjf)
     return (
         <div>
             Categories page 
